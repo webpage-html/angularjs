@@ -77,6 +77,16 @@
          $scope.submit=true;
          $scope.update=false;
          $scope.cancel=false;
+         
+         $http:({
+            method:'get'
+            url:'getuser'
+         }).then(function successCallback(response){
+            $scope.students=response.data
+        },function errorCallback(response){
+            alert("error,please try again");
+         });
+
     }]);
 </script>
 </html>
